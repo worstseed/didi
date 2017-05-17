@@ -1,0 +1,5 @@
+C:\Users\PP\Documents\Didi\ConsoleApp\BattleConsoleApp\BattleConsoleApp.Library\bin\Debug\BattleConsoleApp.Library.dll
+C:\Users\PP\Documents\Didi\ConsoleApp\BattleConsoleApp\BattleConsoleApp.Library\bin\Debug\BattleConsoleApp.Library.pdb
+C:\Users\PP\Documents\Didi\ConsoleApp\BattleConsoleApp\BattleConsoleApp.Library\obj\Debug\BattleConsoleApp.Library.csprojResolveAssemblyReference.cache
+C:\Users\PP\Documents\Didi\ConsoleApp\BattleConsoleApp\BattleConsoleApp.Library\obj\Debug\BattleConsoleApp.Library.dll
+C:\Users\PP\Documents\Didi\ConsoleApp\BattleConsoleApp\BattleConsoleApp.Library\obj\Debug\BattleConsoleApp.Library.pdb
