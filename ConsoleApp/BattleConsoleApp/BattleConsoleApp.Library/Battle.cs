@@ -32,7 +32,7 @@ namespace BattleConsoleApp.Library
             BattleField oppositeWarrior = (warrior == BattleField.Greek)
                 ? BattleField.Roman
                 : BattleField.Greek;
-            CountWarriorsv2(out int numberOfWarrior, out int numberOfOppositeWarrior, row, col, warrior, oppositeWarrior);
+            CountWarriors(out int numberOfWarrior, out int numberOfOppositeWarrior, row, col, warrior, oppositeWarrior);
             LocalFight(numberOfWarrior, numberOfOppositeWarrior, row, col, warrior, oppositeWarrior);
         }
 
