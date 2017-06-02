@@ -3,6 +3,6 @@
     public enum BattleField
     {
         // Roman stronger than Greek xd.
-        Walkable, NotWalkable, Greek, Roman
+        Empty, Walkable, NotWalkable, Greek, Roman
     }
 }

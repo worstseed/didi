@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BattleConsoleApp.Library;
 
 namespace BattleConsoleApp
 {
@@ -10,22 +11,15 @@ namespace BattleConsoleApp
     {
         static void Main(string[] args)
         {
-            var counterRow = 0;
-            var counterCol = 0;
-            for (var i = 0; i < 20; i++)
+            Battle _battle = new Battle();
+            int numberOfRounds = 30;
+            for (int i = 1; i <= numberOfRounds; i++)
             {
-                for (var j = 0; j < 10; j++)
-                {
-                    Console.Write(counterRow);
-                    Console.Write(", ");
-                    Console.Write(counterCol);
-                    Console.Write("       ");
-                    counterCol++;
-                }
+                Display.WriteToConsole(_battle.BattleArea);
+                _battle.PlayRound();
                 Console.WriteLine();
-                counterRow++;
-                counterCol = 0;
             }
+            Console.ReadLine();
         }
     }
 }
