@@ -9,14 +9,14 @@ namespace BattleConsoleApp
 {
     class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Battle _battle = new Battle();
-            int numberOfRounds = 30;
+            var battle = new Battle();
+            var numberOfRounds = 30;
             for (var i = 1; i <= numberOfRounds; i++)
             {
-                Display.WriteToConsole(_battle.BattleArea);
-                _battle.PlayRound();
+                Display.WriteToConsole(battle.BattleArea);
+                battle.PlayRound();
                 Console.WriteLine();
             }
             Console.ReadLine();

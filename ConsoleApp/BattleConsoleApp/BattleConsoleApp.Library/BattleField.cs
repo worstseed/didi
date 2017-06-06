@@ -2,7 +2,7 @@
 {
     public enum BattleField
     {
-        // Roman stronger than Greek .
-        Empty, Walkable, NotWalkable, Greek, Roman
+        // Gauls stronger than Roman.
+        Empty, Walkable, NotWalkable, Roman, Gauls
     }
 }

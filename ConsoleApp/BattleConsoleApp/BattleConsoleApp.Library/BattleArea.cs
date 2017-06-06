@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BattleConsoleApp.Library
+﻿namespace BattleConsoleApp.Library
 {
     public class BattleArea
     {
@@ -39,39 +33,49 @@ namespace BattleConsoleApp.Library
 
         private void MakeFormation()
         {
-            SetGreekArmy();
             SetRomanArmy();
+            SetGaulsArmy();
+            SetTrees();
         }
 
-        private void SetGreekArmy()
+        private void SetTrees()
         {
-        // Greek army xd.
-            for (var i = 0; i < Width; i++)
+            for (var i = 0; i < Width; i = i + 2)
             {
-                for (var j = 0; j < 2; j++)
-                {
-                    ActualBattleArea[j, i] = BattleField.Greek;
-                }
+                ActualBattleArea[5, i] = BattleField.NotWalkable;
             }
+            
         }
 
         private void SetRomanArmy()
         {
-            // Roman army xd.
+        // Roman army.
             for (var i = 0; i < Width; i++)
             {
-                for (var j = Length - 2; j < Length; j++)
+                for (var j = 0; j < 2; j++)
                 {
                     ActualBattleArea[j, i] = BattleField.Roman;
                 }
             }
         }
 
+        private void SetGaulsArmy()
+        {
+            // Gauls army.
+            for (var i = 0; i < Width; i++)
+            {
+                for (var j = Length - 2; j < Length; j++)
+                {
+                    ActualBattleArea[j, i] = BattleField.Gauls;
+                }
+            }
+        }
+
         public void UpdateArea()
         {
-            for(int i = 0; i < Length; i++)
+            for(var i = 0; i < Length; i++)
             {
-                for(int j = 0; j < Width; j++)
+                for(var j = 0; j < Width; j++)
                 {
                     ActualBattleArea[i,j] = NextBattleArea[i, j];
                 }
@@ -81,9 +85,9 @@ namespace BattleConsoleApp.Library
         
         private void EmptyArea(BattleField[,] area)
         {
-            for (int i = 0; i < Length; i++)
+            for (var i = 0; i < Length; i++)
             {
-                for (int j = 0; j < Width; j++)
+                for (var j = 0; j < Width; j++)
                 {
                     area[i, j] = BattleField.Empty;
                 }

@@ -22,13 +22,13 @@ namespace BattleConsoleApp
                             Console.Write('-');
                             break;
                         case BattleField.NotWalkable:
-                            Console.Write('n');
-                            break;
-                        case BattleField.Greek:
-                            Console.Write('g');
+                            Console.Write('x');
                             break;
                         case BattleField.Roman:
-                            Console.Write('r');
+                            Console.Write('^');
+                            break;
+                        case BattleField.Gauls:
+                            Console.Write('*');
                             break;
                     }
                 }
