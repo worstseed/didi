@@ -38,13 +38,20 @@
             SetTrees();
         }
 
-        private void SetTrees()
+        private void SetTrees(int version = 1)
         {
-            for (var i = 0; i < Width; i = i + 2)
+            switch (version)
             {
-                ActualBattleArea[5, i] = BattleField.NotWalkable;
+                case 1:
+                    for (var i = 0; i < Width; i = i + 2)
+                    {
+                        ActualBattleArea[5, i] = BattleField.NotWalkable;
+                    }
+                    break;
+                case 2:
+                    
+                    break;
             }
-            
         }
 
         private void SetRomanArmy()

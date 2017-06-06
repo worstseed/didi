@@ -164,7 +164,7 @@
                         break;
                 }
             }
-            else if (row == BattleArea.Length / 2 - 1)
+            else if (row == BattleArea.Length / 2 + 1)
             {
                 if (col < BattleArea.Width && BattleArea.NextBattleArea[row, col + 1] == BattleField.Walkable)
                 {
