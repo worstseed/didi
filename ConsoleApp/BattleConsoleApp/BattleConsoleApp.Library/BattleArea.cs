@@ -28,9 +28,9 @@ namespace BattleConsoleApp.Library
 
         private void SetMap(BattleField[, ] area)
         {
-            for(int i = 0; i < Length; i++)
+            for(var i = 0; i < Length; i++)
             {
-                for (int j = 0; j < Width; j++)
+                for (var j = 0; j < Width; j++)
                 {
                     area[i, j] = BattleField.Walkable;
                 }

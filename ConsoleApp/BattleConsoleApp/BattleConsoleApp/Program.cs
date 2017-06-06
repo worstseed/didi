@@ -13,7 +13,7 @@ namespace BattleConsoleApp
         {
             Battle _battle = new Battle();
             int numberOfRounds = 30;
-            for (int i = 1; i <= numberOfRounds; i++)
+            for (var i = 1; i <= numberOfRounds; i++)
             {
                 Display.WriteToConsole(_battle.BattleArea);
                 _battle.PlayRound();

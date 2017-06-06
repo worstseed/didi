@@ -37,63 +37,62 @@ namespace BattleConsoleApp.Library
         }
 
         private void CountWarriors(out int numberOfWarrior, out int numberOfOppositeWarrior,
-            int row, int col, BattleField warrior, BattleField oppositeWarrior)
+            int row, int col, BattleField warrior, BattleField oppositeWarrior, int version = 2)
         {
             numberOfWarrior = 0;
             numberOfOppositeWarrior = 0;
-            for (var i = row - 1; i <= row + 1; i++)
+            switch (version)
             {
-                for (var j = col - 1; j <= col + 1; j++)
-                {
-                    if (i >= 0 && i < BattleArea.Length && j >= 0 && j < BattleArea.Width)
+                case 1:
+                    for (var i = row - 1; i <= row + 1; i++)
                     {
-                        if (BattleArea.ActualBattleArea[i, j] == warrior)
+                        for (var j = col - 1; j <= col + 1; j++)
                         {
-                            numberOfWarrior++;
-                        }
-                        else if(BattleArea.ActualBattleArea[i, j] == oppositeWarrior)
-                        {
-                            numberOfOppositeWarrior++;
+                            if (i >= 0 && i < BattleArea.Length && j >= 0 && j < BattleArea.Width)
+                            {
+                                if (BattleArea.ActualBattleArea[i, j] == warrior)
+                                {
+                                    numberOfWarrior++;
+                                }
+                                else if (BattleArea.ActualBattleArea[i, j] == oppositeWarrior)
+                                {
+                                    numberOfOppositeWarrior++;
+                                }
+                            }
                         }
                     }
-                }
-            }
-
-        }
-
-        private void CountWarriorsv2(out int numberOfWarrior, out int numberOfOppositeWarrior,
-           int row, int col, BattleField warrior, BattleField oppositeWarrior)
-        {
-            numberOfWarrior = 0;
-            numberOfOppositeWarrior = 0;
-            int a;
-            int b;
-            if(warrior == BattleField.Greek)
-            {
-                a = row;
-                b = row + 1;
-            }
-            else
-            {
-                a = row - 1;
-                b = row;
-            }
-            for (var i = a; i <= b; i++)
-            {
-                for (var j = col - 1; j <= col + 1; j++)
-                {
-                    if (i >= 0 && i < BattleArea.Length && j >= 0 && j < BattleArea.Width)
+                    break;
+                case 2:
+                    int a;
+                    int b;
+                    if (warrior == BattleField.Greek)
                     {
-                        if (BattleArea.ActualBattleArea[i, j] == warrior)
+                        a = row;
+                        b = row + 1;
+                    }
+                    else
+                    {
+                        a = row - 1;
+                        b = row;
+                    }
+                    for (var i = a; i <= b; i++)
+                    {
+                        for (var j = col - 1; j <= col + 1; j++)
                         {
-                            numberOfWarrior++;
-                        }
-                        else if (BattleArea.ActualBattleArea[i, j] == oppositeWarrior)
-                        {
-                            numberOfOppositeWarrior++;
+                            if (i >= 0 && i < BattleArea.Length && j >= 0 && j < BattleArea.Width)
+                            {
+                                if (BattleArea.ActualBattleArea[i, j] == warrior)
+                                {
+                                    numberOfWarrior++;
+                                }
+                                else if (BattleArea.ActualBattleArea[i, j] == oppositeWarrior)
+                                {
+                                    numberOfOppositeWarrior++;
+                                }
+                            }
                         }
                     }
-                }
+                    break;
             }
 
         }
@@ -113,9 +112,52 @@ namespace BattleConsoleApp.Library
             }
         }
 
-        private void Walk(int row, int col)
+        private void Walk(int row, int col, int version = 2)
         {
             BattleField warrior = BattleArea.ActualBattleArea[row, col];
+            switch (version)
+            {
+                case 1:
+                    Move_v1(row, col, warrior);
+                    break;
+                case 2:
+                    Move_v2(row, col, warrior);
+                    break;
+            }
+        }
+
+        private void Move_v2(int row, int col, BattleField warrior)
+        {
+            if (row < BattleArea.Length / 2 - 2)
+            {
+                if (BattleArea.NextBattleArea[row + 1, col] == BattleField.Walkable)
+                {
+                    BattleArea.NextBattleArea[row + 1, col] = warrior;
+                    BattleArea.NextBattleArea[row, col] = BattleField.Walkable;
+                }
+
+                else
+                    BattleArea.NextBattleArea[row, col] = warrior;
+            }
+            else if (row > BattleArea.Length / 2 + 1)
+            {
+                if (BattleArea.NextBattleArea[row - 1, col] == BattleField.Walkable)
+                {
+                    BattleArea.NextBattleArea[row - 1, col] = warrior;
+                    BattleArea.NextBattleArea[row, col] = BattleField.Walkable;
+                }
+
+                else
+                    BattleArea.NextBattleArea[row, col] = warrior;
+            }
+            else
+            {
+                BattleArea.NextBattleArea[row, col] = BattleArea.ActualBattleArea[row, col]; //
+            }
+        }
+
+        private void Move_v1(int row, int col, BattleField warrior)
+        {
             if ((BattleArea.Ratio * row >= col) && (BattleArea.Width - BattleArea.Ratio * row >= col))
             {
                 if (BattleArea.NextBattleArea[row, col + 1] == BattleField.Walkable)
@@ -161,9 +203,9 @@ namespace BattleConsoleApp.Library
 
         private void Rule()
         {
-            for (int i = 0; i < BattleArea.Length; i++)
+            for (var i = 0; i < BattleArea.Length; i++)
             {
-                for (int j = 0; j < BattleArea.Width; j++)
+                for (var j = 0; j < BattleArea.Width; j++)
                 {
                     LocalRule(i, j);
                 }
@@ -172,9 +214,17 @@ namespace BattleConsoleApp.Library
 
         private void UpdatePositions()
         {
-            for (int i = 0; i < BattleArea.Length; i++)
+            for (var i = BattleArea.Length / 2 - 1; i > -1; i--)
             {
-                for (int j = 0; j < BattleArea.Width; j++)
+                for (var j = 0; j < BattleArea.Width; j++)
+                {
+                    if (BattleArea.NextBattleArea[i, j] == BattleField.Empty)
+                        Walk(i, j);
+                }
+            }
+            for (var i = BattleArea.Length / 2; i < BattleArea.Length; i++)
+            {
+                for (var j = 0; j < BattleArea.Width; j++)
                 {
                     if (BattleArea.NextBattleArea[i, j] == BattleField.Empty)
                         Walk(i, j);

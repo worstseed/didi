@@ -9,11 +9,11 @@ namespace BattleConsoleApp
 {
     static class Display
     {
-        static public void WriteToConsole(BattleArea area)
+        public static void WriteToConsole(BattleArea area)
         {
-            for(int i = 0; i< area.Length; i++)
+            for(var i = 0; i< area.Length; i++)
             {
-                for(int j = 0; j < area.Width; j++)
+                for(var j = 0; j < area.Width; j++)
                 {
                     BattleField field = area.ActualBattleArea[i, j];
                     switch (field)
