@@ -5,9 +5,9 @@
         public BattleArea BattleArea { get; set; }
 
         // Konstruktor klasy - stworzenie pola bitwy o zadanym rozmiarze.
-        public Battle()
+        public Battle(int length = 10, int width = 20)
         {
-            BattleArea = new BattleArea(10, 20);
+            BattleArea = new BattleArea(length, width);
         }
 
         // Metoda przeprowadza pole bitwy do następnego stanu:

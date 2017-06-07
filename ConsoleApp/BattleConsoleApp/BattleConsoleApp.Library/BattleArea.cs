@@ -51,13 +51,18 @@
                     }
                     break;
                 case 2:
+                    //ActualBattleArea[3, 4] = BattleField.NotWalkable;
+                    ActualBattleArea[4, 10] = BattleField.NotWalkable;
+                    //ActualBattleArea[4, 13] = BattleField.NotWalkable;
+
+                    ActualBattleArea[5, 1] = BattleField.NotWalkable;
                     //ActualBattleArea[5, 2] = BattleField.NotWalkable;
-                    ActualBattleArea[5, 7] = BattleField.NotWalkable;
+                    ActualBattleArea[5, 9] = BattleField.NotWalkable;
                     ActualBattleArea[5, 10] = BattleField.NotWalkable;
                     ActualBattleArea[5, 13] = BattleField.NotWalkable;
                     ActualBattleArea[5, 17] = BattleField.NotWalkable;
                     ActualBattleArea[6, 5] = BattleField.NotWalkable;
-                    ActualBattleArea[6, 11] = BattleField.NotWalkable;
+                    //ActualBattleArea[6, 11] = BattleField.NotWalkable;
                     ActualBattleArea[6, 15] = BattleField.NotWalkable;
                     break;
             }
