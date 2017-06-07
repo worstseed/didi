@@ -29,13 +29,20 @@
                     area[i, j] = BattleField.Walkable;
                 }
             }
+<<<<<<< HEAD
             SetTrees(2);
+=======
+>>>>>>> bd6de9d1550792e7382025c29f179df1fe817d3b
         }
 
         private void MakeFormation()
         {
             SetRomanArmy();
             SetGaulsArmy();
+<<<<<<< HEAD
+=======
+            SetTrees();
+>>>>>>> bd6de9d1550792e7382025c29f179df1fe817d3b
         }
 
         private void SetTrees(int version = 1)
@@ -49,6 +56,7 @@
                     }
                     break;
                 case 2:
+<<<<<<< HEAD
                     ActualBattleArea[5, 3] = BattleField.NotWalkable;
                     ActualBattleArea[5, 7] = BattleField.NotWalkable;
                     ActualBattleArea[5, 10] = BattleField.NotWalkable;
@@ -57,6 +65,9 @@
                     ActualBattleArea[6, 5] = BattleField.NotWalkable;
                     ActualBattleArea[6, 11] = BattleField.NotWalkable;
                     ActualBattleArea[6, 15] = BattleField.NotWalkable;
+=======
+                    
+>>>>>>> bd6de9d1550792e7382025c29f179df1fe817d3b
                     break;
             }
         }

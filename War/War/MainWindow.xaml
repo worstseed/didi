@@ -1,0 +1,248 @@
+﻿<Window x:Class="War.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:War"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="620">
+    <Grid x:Name="Grid1" Height="280" Margin="10,10,0,0" VerticalAlignment="Top" Grid.Row="10" Grid.Column="20" Grid.RowSpan="10" Grid.ColumnSpan="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="14*"/>
+            <RowDefinition Height="14*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
+        </Grid.ColumnDefinitions>
+        <Label Name="Label0" Height="22" Width="22" Grid.Column="0"/>
+        <Label Name="Label1" Height="14" Width="14" Grid.Column="1"/>
+        <Label Name="Label2" Height="14" Width="14" Grid.Column="2"/>
+        <Label Name="Label3" Height="14" Width="14" Grid.Column="3"/>
+        <Label Name="Label4" Height="14" Width="14" Grid.Column="4"/>
+        <Label Name="Label5" Height="14" Width="14" Grid.Column="5"/>
+        <Label Name="Label6" Height="14" Width="14" Grid.Column="6"/>
+        <Label Name="Label7" Height="14" Width="14" Grid.Column="7"/>
+        <Label Name="Label8" Height="14" Width="14" Grid.Column="8"/>
+        <Label Name="Label9" Height="14" Width="14" Grid.Column="9"/>
+        <Label Name="Label10" Height="14" Width="14" Grid.Column="10"/>
+        <Label Name="Label11" Height="14" Width="14" Grid.Column="11"/>
+        <Label Name="Label12" Height="14" Width="14" Grid.Column="12"/>
+        <Label Name="Label13" Height="14" Width="14" Grid.Column="13"/>
+        <Label Name="Label14" Height="14" Width="14" Grid.Column="14"/>
+        <Label Name="Label15" Height="14" Width="14" Grid.Column="15"/>
+        <Label Name="Label16" Height="14" Width="14" Grid.Column="16"/>
+        <Label Name="Label17" Height="14" Width="14" Grid.Column="17"/>
+        <Label Name="Label18" Height="14" Width="14" Grid.Column="18"/>
+        <Label Name="Label19" Height="14" Width="14" Grid.Column="19"/>
+        <Label Name="Label20" Height="14" Width="14" Grid.Column="0" Grid.Row="1"/>
+        <Label Name="Label21" Height="14" Width="14" Grid.Column="1" Grid.Row="1"/>
+        <Label Name="Label22" Height="14" Width="14" Grid.Column="2" Grid.Row="1"/>
+        <Label Name="Label23" Height="14" Width="14" Grid.Column="3" Grid.Row="1"/>
+        <Label Name="Label24" Height="14" Width="14" Grid.Column="4" Grid.Row="1"/>
+        <Label Name="Label25" Height="14" Width="14" Grid.Column="5" Grid.Row="1"/>
+        <Label Name="Label26" Height="14" Width="14" Grid.Column="6" Grid.Row="1"/>
+        <Label Name="Label27" Height="14" Width="14" Grid.Column="7" Grid.Row="1"/>
+        <Label Name="Label28" Height="14" Width="14" Grid.Column="8" Grid.Row="1"/>
+        <Label Name="Label29" Height="14" Width="14" Grid.Column="9" Grid.Row="1"/>
+        <Label Name="Label30" Height="14" Width="14" Grid.Column="10" Grid.Row="1"/>
+        <Label Name="Label31" Height="14" Width="14" Grid.Column="11" Grid.Row="1"/>
+        <Label Name="Label32" Height="14" Width="14" Grid.Column="12" Grid.Row="1"/>
+        <Label Name="Label33" Height="14" Width="14" Grid.Column="13" Grid.Row="1"/>
+        <Label Name="Label34" Height="14" Width="14" Grid.Column="14" Grid.Row="1"/>
+        <Label Name="Label35" Height="14" Width="14" Grid.Column="15" Grid.Row="1"/>
+        <Label Name="Label36" Height="14" Width="14" Grid.Column="16" Grid.Row="1"/>
+        <Label Name="Label37" Height="14" Width="14" Grid.Column="17" Grid.Row="1"/>
+        <Label Name="Label38" Height="14" Width="14" Grid.Column="18" Grid.Row="1"/>
+        <Label Name="Label39" Height="14" Width="14" Grid.Column="19" Grid.Row="1"/>
+        <Label Name="Label40" Height="14" Width="14" Grid.Column="0" Grid.Row="2"/>
+        <Label Name="Label41" Height="14" Width="14" Grid.Column="1" Grid.Row="2"/>
+        <Label Name="Label42" Height="14" Width="14" Grid.Column="2" Grid.Row="2"/>
+        <Label Name="Label43" Height="14" Width="14" Grid.Column="3" Grid.Row="2"/>
+        <Label Name="Label44" Height="14" Width="14" Grid.Column="4" Grid.Row="2"/>
+        <Label Name="Label45" Height="14" Width="14" Grid.Column="5" Grid.Row="2"/>
+        <Label Name="Label46" Height="14" Width="14" Grid.Column="6" Grid.Row="2"/>
+        <Label Name="Label47" Height="14" Width="14" Grid.Column="7" Grid.Row="2"/>
+        <Label Name="Label48" Height="14" Width="14" Grid.Column="8" Grid.Row="2"/>
+        <Label Name="Label49" Height="14" Width="14" Grid.Column="9" Grid.Row="2"/>
+        <Label Name="Label50" Height="14" Width="14" Grid.Column="10" Grid.Row="2"/>
+        <Label Name="Label51" Height="14" Width="14" Grid.Column="11" Grid.Row="2"/>
+        <Label Name="Label52" Height="14" Width="14" Grid.Column="12" Grid.Row="2"/>
+        <Label Name="Label53" Height="14" Width="14" Grid.Column="13" Grid.Row="2"/>
+        <Label Name="Label54" Height="14" Width="14" Grid.Column="14" Grid.Row="2"/>
+        <Label Name="Label55" Height="14" Width="14" Grid.Column="15" Grid.Row="2"/>
+        <Label Name="Label56" Height="14" Width="14" Grid.Column="16" Grid.Row="2"/>
+        <Label Name="Label57" Height="14" Width="14" Grid.Column="17" Grid.Row="2"/>
+        <Label Name="Label58" Height="14" Width="14" Grid.Column="18" Grid.Row="2"/>
+        <Label Name="Label59" Height="14" Width="14" Grid.Column="19" Grid.Row="2"/>
+        <Label Name="Label60" Height="14" Width="14" Grid.Column="0" Grid.Row="3"/>
+        <Label Name="Label61" Height="14" Width="14" Grid.Column="1" Grid.Row="3"/>
+        <Label Name="Label62" Height="14" Width="14" Grid.Column="2" Grid.Row="3"/>
+        <Label Name="Label63" Height="14" Width="14" Grid.Column="3" Grid.Row="3"/>
+        <Label Name="Label64" Height="14" Width="14" Grid.Column="4" Grid.Row="3"/>
+        <Label Name="Label65" Height="14" Width="14" Grid.Column="5" Grid.Row="3"/>
+        <Label Name="Label66" Height="14" Width="14" Grid.Column="6" Grid.Row="3"/>
+        <Label Name="Label67" Height="14" Width="14" Grid.Column="7" Grid.Row="3"/>
+        <Label Name="Label68" Height="14" Width="14" Grid.Column="8" Grid.Row="3"/>
+        <Label Name="Label69" Height="14" Width="14" Grid.Column="9" Grid.Row="3"/>
+        <Label Name="Label70" Height="14" Width="14" Grid.Column="10" Grid.Row="3"/>
+        <Label Name="Label71" Height="14" Width="14" Grid.Column="11" Grid.Row="3"/>
+        <Label Name="Label72" Height="14" Width="14" Grid.Column="12" Grid.Row="3"/>
+        <Label Name="Label73" Height="14" Width="14" Grid.Column="13" Grid.Row="3"/>
+        <Label Name="Label74" Height="14" Width="14" Grid.Column="14" Grid.Row="3"/>
+        <Label Name="Label75" Height="14" Width="14" Grid.Column="15" Grid.Row="3"/>
+        <Label Name="Label76" Height="14" Width="14" Grid.Column="16" Grid.Row="3"/>
+        <Label Name="Label77" Height="14" Width="14" Grid.Column="17" Grid.Row="3"/>
+        <Label Name="Label78" Height="14" Width="14" Grid.Column="18" Grid.Row="3"/>
+        <Label Name="Label79" Height="14" Width="14" Grid.Column="19" Grid.Row="3"/>
+        <Label Name="Label80" Height="14" Width="14" Grid.Column="0" Grid.Row="4"/>
+        <Label Name="Label81" Height="14" Width="14" Grid.Column="1" Grid.Row="4"/>
+        <Label Name="Label82" Height="14" Width="14" Grid.Column="2" Grid.Row="4"/>
+        <Label Name="Label83" Height="14" Width="14" Grid.Column="3" Grid.Row="4"/>
+        <Label Name="Label84" Height="14" Width="14" Grid.Column="4" Grid.Row="4"/>
+        <Label Name="Label85" Height="14" Width="14" Grid.Column="5" Grid.Row="4"/>
+        <Label Name="Label86" Height="14" Width="14" Grid.Column="6" Grid.Row="4"/>
+        <Label Name="Label87" Height="14" Width="14" Grid.Column="7" Grid.Row="4"/>
+        <Label Name="Label88" Height="14" Width="14" Grid.Column="8" Grid.Row="4"/>
+        <Label Name="Label89" Height="14" Width="14" Grid.Column="9" Grid.Row="4"/>
+        <Label Name="Label90" Height="14" Width="14" Grid.Column="10" Grid.Row="4"/>
+        <Label Name="Label91" Height="14" Width="14" Grid.Column="11" Grid.Row="4"/>
+        <Label Name="Label92" Height="14" Width="14" Grid.Column="12" Grid.Row="4"/>
+        <Label Name="Label93" Height="14" Width="14" Grid.Column="13" Grid.Row="4"/>
+        <Label Name="Label94" Height="14" Width="14" Grid.Column="14" Grid.Row="4"/>
+        <Label Name="Label95" Height="14" Width="14" Grid.Column="15" Grid.Row="4"/>
+        <Label Name="Label96" Height="14" Width="14" Grid.Column="16" Grid.Row="4"/>
+        <Label Name="Label97" Height="14" Width="14" Grid.Column="17" Grid.Row="4"/>
+        <Label Name="Label98" Height="14" Width="14" Grid.Column="18" Grid.Row="4"/>
+        <Label Name="Label99" Height="14" Width="14" Grid.Column="19" Grid.Row="4"/>
+        <Label Name="Label100" Height="14" Width="14" Grid.Column="0" Grid.Row="5"/>
+        <Label Name="Label101" Height="14" Width="14" Grid.Column="1" Grid.Row="5"/>
+        <Label Name="Label102" Height="14" Width="14" Grid.Column="2" Grid.Row="5"/>
+        <Label Name="Label103" Height="14" Width="14" Grid.Column="3" Grid.Row="5"/>
+        <Label Name="Label104" Height="14" Width="14" Grid.Column="4" Grid.Row="5"/>
+        <Label Name="Label105" Height="14" Width="14" Grid.Column="5" Grid.Row="5"/>
+        <Label Name="Label106" Height="14" Width="14" Grid.Column="6" Grid.Row="5"/>
+        <Label Name="Label107" Height="14" Width="14" Grid.Column="7" Grid.Row="5"/>
+        <Label Name="Label108" Height="14" Width="14" Grid.Column="8" Grid.Row="5"/>
+        <Label Name="Label109" Height="14" Width="14" Grid.Column="9" Grid.Row="5"/>
+        <Label Name="Label110" Height="14" Width="14" Grid.Column="10" Grid.Row="5"/>
+        <Label Name="Label111" Height="14" Width="14" Grid.Column="11" Grid.Row="5"/>
+        <Label Name="Label112" Height="14" Width="14" Grid.Column="12" Grid.Row="5"/>
+        <Label Name="Label113" Height="14" Width="14" Grid.Column="13" Grid.Row="5"/>
+        <Label Name="Label114" Height="14" Width="14" Grid.Column="14" Grid.Row="5"/>
+        <Label Name="Label115" Height="14" Width="14" Grid.Column="15" Grid.Row="5"/>
+        <Label Name="Label116" Height="14" Width="14" Grid.Column="16" Grid.Row="5"/>
+        <Label Name="Label117" Height="14" Width="14" Grid.Column="17" Grid.Row="5"/>
+        <Label Name="Label118" Height="14" Width="14" Grid.Column="18" Grid.Row="5"/>
+        <Label Name="Label119" Height="14" Width="14" Grid.Column="19" Grid.Row="5"/>
+        <Label Name="Label120" Height="14" Width="14" Grid.Column="0" Grid.Row="6"/>
+        <Label Name="Label121" Height="14" Width="14" Grid.Column="1" Grid.Row="6"/>
+        <Label Name="Label122" Height="14" Width="14" Grid.Column="2" Grid.Row="6"/>
+        <Label Name="Label123" Height="14" Width="14" Grid.Column="3" Grid.Row="6"/>
+        <Label Name="Label124" Height="14" Width="14" Grid.Column="4" Grid.Row="6"/>
+        <Label Name="Label125" Height="14" Width="14" Grid.Column="5" Grid.Row="6"/>
+        <Label Name="Label126" Height="14" Width="14" Grid.Column="6" Grid.Row="6"/>
+        <Label Name="Label127" Height="14" Width="14" Grid.Column="7" Grid.Row="6"/>
+        <Label Name="Label128" Height="14" Width="14" Grid.Column="8" Grid.Row="6"/>
+        <Label Name="Label129" Height="14" Width="14" Grid.Column="9" Grid.Row="6"/>
+        <Label Name="Label130" Height="14" Width="14" Grid.Column="10" Grid.Row="6"/>
+        <Label Name="Label131" Height="14" Width="14" Grid.Column="11" Grid.Row="6"/>
+        <Label Name="Label132" Height="14" Width="14" Grid.Column="12" Grid.Row="6"/>
+        <Label Name="Label133" Height="14" Width="14" Grid.Column="13" Grid.Row="6"/>
+        <Label Name="Label134" Height="14" Width="14" Grid.Column="14" Grid.Row="6"/>
+        <Label Name="Label135" Height="14" Width="14" Grid.Column="15" Grid.Row="6"/>
+        <Label Name="Label136" Height="14" Width="14" Grid.Column="16" Grid.Row="6"/>
+        <Label Name="Label137" Height="14" Width="14" Grid.Column="17" Grid.Row="6"/>
+        <Label Name="Label138" Height="14" Width="14" Grid.Column="18" Grid.Row="6"/>
+        <Label Name="Label139" Height="14" Width="14" Grid.Column="19" Grid.Row="6"/>
+        <Label Name="Label140" Height="14" Width="14" Grid.Column="0" Grid.Row="7"/>
+        <Label Name="Label141" Height="14" Width="14" Grid.Column="1" Grid.Row="7"/>
+        <Label Name="Label142" Height="14" Width="14" Grid.Column="2" Grid.Row="7"/>
+        <Label Name="Label143" Height="14" Width="14" Grid.Column="3" Grid.Row="7"/>
+        <Label Name="Label144" Height="14" Width="14" Grid.Column="4" Grid.Row="7"/>
+        <Label Name="Label145" Height="14" Width="14" Grid.Column="5" Grid.Row="7"/>
+        <Label Name="Label146" Height="14" Width="14" Grid.Column="6" Grid.Row="7"/>
+        <Label Name="Label147" Height="14" Width="14" Grid.Column="7" Grid.Row="7"/>
+        <Label Name="Label148" Height="14" Width="14" Grid.Column="8" Grid.Row="7"/>
+        <Label Name="Label149" Height="14" Width="14" Grid.Column="9" Grid.Row="7"/>
+        <Label Name="Label150" Height="14" Width="14" Grid.Column="10" Grid.Row="7"/>
+        <Label Name="Label151" Height="14" Width="14" Grid.Column="11" Grid.Row="7"/>
+        <Label Name="Label152" Height="14" Width="14" Grid.Column="12" Grid.Row="7"/>
+        <Label Name="Label153" Height="14" Width="14" Grid.Column="13" Grid.Row="7"/>
+        <Label Name="Label154" Height="14" Width="14" Grid.Column="14" Grid.Row="7"/>
+        <Label Name="Label155" Height="14" Width="14" Grid.Column="15" Grid.Row="7"/>
+        <Label Name="Label156" Height="14" Width="14" Grid.Column="16" Grid.Row="7"/>
+        <Label Name="Label157" Height="14" Width="14" Grid.Column="17" Grid.Row="7"/>
+        <Label Name="Label158" Height="14" Width="14" Grid.Column="18" Grid.Row="7"/>
+        <Label Name="Label159" Height="14" Width="14" Grid.Column="19" Grid.Row="7"/>
+        <Label Name="Label160" Height="14" Width="14" Grid.Column="0" Grid.Row="8"/>
+        <Label Name="Label161" Height="14" Width="14" Grid.Column="1" Grid.Row="8"/>
+        <Label Name="Label162" Height="14" Width="14" Grid.Column="2" Grid.Row="8"/>
+        <Label Name="Label163" Height="14" Width="14" Grid.Column="3" Grid.Row="8"/>
+        <Label Name="Label164" Height="14" Width="14" Grid.Column="4" Grid.Row="8"/>
+        <Label Name="Label165" Height="14" Width="14" Grid.Column="5" Grid.Row="8"/>
+        <Label Name="Label166" Height="14" Width="14" Grid.Column="6" Grid.Row="8"/>
+        <Label Name="Label167" Height="14" Width="14" Grid.Column="7" Grid.Row="8"/>
+        <Label Name="Label168" Height="14" Width="14" Grid.Column="8" Grid.Row="8"/>
+        <Label Name="Label169" Height="14" Width="14" Grid.Column="9" Grid.Row="8"/>
+        <Label Name="Label170" Height="14" Width="14" Grid.Column="10" Grid.Row="8"/>
+        <Label Name="Label171" Height="14" Width="14" Grid.Column="11" Grid.Row="8"/>
+        <Label Name="Label172" Height="14" Width="14" Grid.Column="12" Grid.Row="8"/>
+        <Label Name="Label173" Height="14" Width="14" Grid.Column="13" Grid.Row="8"/>
+        <Label Name="Label174" Height="14" Width="14" Grid.Column="14" Grid.Row="8"/>
+        <Label Name="Label175" Height="14" Width="14" Grid.Column="15" Grid.Row="8"/>
+        <Label Name="Label176" Height="14" Width="14" Grid.Column="16" Grid.Row="8"/>
+        <Label Name="Label177" Height="14" Width="14" Grid.Column="17" Grid.Row="8"/>
+        <Label Name="Label178" Height="14" Width="14" Grid.Column="18" Grid.Row="8"/>
+        <Label Name="Label179" Height="14" Width="14" Grid.Column="19" Grid.Row="8"/>
+        <Label Name="Label180" Height="14" Width="14" Grid.Column="0" Grid.Row="9"/>
+        <Label Name="Label181" Height="14" Width="14" Grid.Column="1" Grid.Row="9"/>
+        <Label Name="Label182" Height="14" Width="14" Grid.Column="2" Grid.Row="9"/>
+        <Label Name="Label183" Height="14" Width="14" Grid.Column="3" Grid.Row="9"/>
+        <Label Name="Label184" Height="14" Width="14" Grid.Column="4" Grid.Row="9"/>
+        <Label Name="Label185" Height="14" Width="14" Grid.Column="5" Grid.Row="9"/>
+        <Label Name="Label186" Height="14" Width="14" Grid.Column="6" Grid.Row="9"/>
+        <Label Name="Label187" Height="14" Width="14" Grid.Column="7" Grid.Row="9"/>
+        <Label Name="Label188" Height="14" Width="14" Grid.Column="8" Grid.Row="9"/>
+        <Label Name="Label189" Height="14" Width="14" Grid.Column="9" Grid.Row="9"/>
+        <Label Name="Label190" Height="14" Width="14" Grid.Column="10" Grid.Row="9"/>
+        <Label Name="Label191" Height="14" Width="14" Grid.Column="11" Grid.Row="9"/>
+        <Label Name="Label192" Height="14" Width="14" Grid.Column="12" Grid.Row="9"/>
+        <Label Name="Label193" Height="14" Width="14" Grid.Column="13" Grid.Row="9"/>
+        <Label Name="Label194" Height="14" Width="14" Grid.Column="14" Grid.Row="9"/>
+        <Label Name="Label195" Height="14" Width="14" Grid.Column="15" Grid.Row="9"/>
+        <Label Name="Label196" Height="14" Width="14" Grid.Column="16" Grid.Row="9"/>
+        <Label Name="Label197" Height="14" Width="14" Grid.Column="17" Grid.Row="9"/>
+        <Label Name="Label198" Height="14" Width="14" Grid.Column="18" Grid.Row="9"/>
+        <Label Name="Label199" Height="14" Width="14" Grid.Column="19" Grid.Row="9"/>
+        <Button Grid.ColumnSpan="4" Content="Next" Grid.Column="15" HorizontalAlignment="Left" Height="38" Margin="24,140,0,-150" Grid.Row="9" VerticalAlignment="Top" Width="96" FontWeight="Bold" FontSize="16" Click="Button_Next"/>
+        <Button Grid.ColumnSpan="4" Content="Previous" Grid.Column="9" HorizontalAlignment="Left" Height="38" Margin="16,140,0,-150" Grid.Row="9" VerticalAlignment="Top" Width="96" FontWeight="Bold" FontSize="16" Click="Button_Previous"/>
+
+    </Grid>
+</Window>

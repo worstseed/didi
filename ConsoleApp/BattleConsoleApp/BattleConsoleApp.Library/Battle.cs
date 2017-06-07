@@ -132,7 +132,11 @@
 
         private void Move_v2(int row, int col, BattleField warrior)
         {
+<<<<<<< HEAD
             if (row < BattleArea.Length / 2 - 1)
+=======
+            if (row < BattleArea.Length / 2)
+>>>>>>> bd6de9d1550792e7382025c29f179df1fe817d3b
             {
                 switch (BattleArea.NextBattleArea[row + 1, col])
                 {
@@ -148,7 +152,11 @@
                         break;
                 }
             }
+<<<<<<< HEAD
             else if (row > BattleArea.Length / 2 )
+=======
+            else if (row > BattleArea.Length / 2 - 1)
+>>>>>>> bd6de9d1550792e7382025c29f179df1fe817d3b
             {
                 switch (BattleArea.NextBattleArea[row - 1, col])
                 {
@@ -164,9 +172,15 @@
                         break;
                 }
             }
+<<<<<<< HEAD
             else if(col < BattleArea.Width / 2)
             {
                 if(BattleArea.NextBattleArea[row, col + 1] == BattleField.Walkable)
+=======
+            else if (row == BattleArea.Length / 2 + 1)
+            {
+                if (col < BattleArea.Width && BattleArea.NextBattleArea[row, col + 1] == BattleField.Walkable)
+>>>>>>> bd6de9d1550792e7382025c29f179df1fe817d3b
                 {
                     BattleArea.NextBattleArea[row, col + 1] = warrior;
                     BattleArea.NextBattleArea[row, col] = BattleField.Walkable;
@@ -176,18 +190,35 @@
                 else
                     BattleArea.NextBattleArea[row, col] = warrior;
             }
+<<<<<<< HEAD
             else if (col >= BattleArea.Width / 2)
             {
                 if (BattleArea.NextBattleArea[row, col - 1] == BattleField.Walkable)
+=======
+            else if (row == BattleArea.Length / 2)
+            {
+                if (col - 1 > -1 && BattleArea.NextBattleArea[row, col - 1] == BattleField.Walkable)
+>>>>>>> bd6de9d1550792e7382025c29f179df1fe817d3b
                 {
                     BattleArea.NextBattleArea[row, col - 1] = warrior;
                     BattleArea.NextBattleArea[row, col] = BattleField.Walkable;
                 }
+<<<<<<< HEAD
                 else if (BattleArea.NextBattleArea[row, col - 1] == BattleField.NotWalkable)
+=======
+                else if(BattleArea.NextBattleArea[row, col - 1] == BattleField.NotWalkable)
+>>>>>>> bd6de9d1550792e7382025c29f179df1fe817d3b
                     MoveAroundObstacle(row, col, warrior);
                 else
                     BattleArea.NextBattleArea[row, col] = warrior;
             }
+<<<<<<< HEAD
+=======
+            else
+            {
+                BattleArea.NextBattleArea[row, col] = BattleArea.ActualBattleArea[row, col];
+            }
+>>>>>>> bd6de9d1550792e7382025c29f179df1fe817d3b
         }
 
         private void MoveAroundObstacle(int row, int col, BattleField warrior)
