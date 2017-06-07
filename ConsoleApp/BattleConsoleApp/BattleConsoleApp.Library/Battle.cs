@@ -132,7 +132,7 @@
 
         private void Move_v2(int row, int col, BattleField warrior)
         {
-            if (row < BattleArea.Length / 2)
+            if (row < BattleArea.Length / 2 - 1)
             {
                 switch (BattleArea.NextBattleArea[row + 1, col])
                 {
@@ -148,7 +148,7 @@
                         break;
                 }
             }
-            else if (row > BattleArea.Length / 2 - 1)
+            else if (row > BattleArea.Length / 2 )
             {
                 switch (BattleArea.NextBattleArea[row - 1, col])
                 {
@@ -164,9 +164,9 @@
                         break;
                 }
             }
-            else if (row == BattleArea.Length / 2 + 1)
+            else if(col < BattleArea.Width / 2)
             {
-                if (col < BattleArea.Width && BattleArea.NextBattleArea[row, col + 1] == BattleField.Walkable)
+                if(BattleArea.NextBattleArea[row, col + 1] == BattleField.Walkable)
                 {
                     BattleArea.NextBattleArea[row, col + 1] = warrior;
                     BattleArea.NextBattleArea[row, col] = BattleField.Walkable;
@@ -176,21 +176,17 @@
                 else
                     BattleArea.NextBattleArea[row, col] = warrior;
             }
-            else if (row == BattleArea.Length / 2)
+            else if (col >= BattleArea.Width / 2)
             {
-                if (col - 1 > -1 && BattleArea.NextBattleArea[row, col - 1] == BattleField.Walkable)
+                if (BattleArea.NextBattleArea[row, col - 1] == BattleField.Walkable)
                 {
                     BattleArea.NextBattleArea[row, col - 1] = warrior;
                     BattleArea.NextBattleArea[row, col] = BattleField.Walkable;
                 }
-                else if(BattleArea.NextBattleArea[row, col - 1] == BattleField.NotWalkable)
+                else if (BattleArea.NextBattleArea[row, col - 1] == BattleField.NotWalkable)
                     MoveAroundObstacle(row, col, warrior);
                 else
                     BattleArea.NextBattleArea[row, col] = warrior;
-            }
-            else
-            {
-                BattleArea.NextBattleArea[row, col] = BattleArea.ActualBattleArea[row, col];
             }
         }
 
