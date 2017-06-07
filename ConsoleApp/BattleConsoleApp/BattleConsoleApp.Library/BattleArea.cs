@@ -8,6 +8,8 @@
         public int Length { get; set; }
         public float Ratio { get; set; }
 
+        // Konstruktor klasy, poza przypisaniem odpowiednich wartości do zmiennych, 
+        //  wywołuje również metody odpowiedzialne za przygotowanie pola bitwy.
         public BattleArea(int length, int width)
         {
             Length = length;
@@ -20,25 +22,25 @@
             MakeFormation();
         }
 
-        private void SetMap(BattleField[, ] area)
+
+        // Poniższe metody tworzą “nieożywioną” przestrzeń pola bitwy 
+        //  - ustalenie, po jakich komórkach pola bitwy jednostki mogą się poruszać, a po których nie.
+        private void SetMap(BattleField[,] area)
         {
-            for(var i = 0; i < Length; i++)
+            CreateWalkableArea(area);
+            SetTrees();
+        }
+        private void CreateWalkableArea(BattleField[,] area)
+        {
+            for (var i = 0; i < Length; i++)
             {
                 for (var j = 0; j < Width; j++)
                 {
                     area[i, j] = BattleField.Walkable;
                 }
             }
-            SetTrees(2);
         }
-
-        private void MakeFormation()
-        {
-            SetRomanArmy();
-            SetGaulsArmy();
-        }
-
-        private void SetTrees(int version = 1)
+        private void SetTrees(int version = 2)
         {
             switch (version)
             {
@@ -49,7 +51,7 @@
                     }
                     break;
                 case 2:
-                    ActualBattleArea[5, 3] = BattleField.NotWalkable;
+                    //ActualBattleArea[5, 2] = BattleField.NotWalkable;
                     ActualBattleArea[5, 7] = BattleField.NotWalkable;
                     ActualBattleArea[5, 10] = BattleField.NotWalkable;
                     ActualBattleArea[5, 13] = BattleField.NotWalkable;
@@ -60,7 +62,14 @@
                     break;
             }
         }
-
+        
+        // Poniższe metody tworzą “ożywioną” przestrzeń pola bitwy 
+        //  - ustalenie startowych formacji oraz liczebności wojsk.
+        private void MakeFormation()
+        {
+            SetRomanArmy();
+            SetGaulsArmy();
+        }
         private void SetRomanArmy()
         {
         // Roman army.
@@ -72,7 +81,6 @@
                 }
             }
         }
-
         private void SetGaulsArmy()
         {
             // Gauls army.
@@ -85,6 +93,8 @@
             }
         }
 
+        // Poniższe metody potrzebne są ze względów programistycznych 
+        //  - przejście między jedną reprezentacją pola bitwy do drugiej.
         public void UpdateArea()
         {
             for(var i = 0; i < Length; i++)
@@ -96,7 +106,6 @@
             }
             EmptyArea(NextBattleArea);
         }
-        
         private void EmptyArea(BattleField[,] area)
         {
             for (var i = 0; i < Length; i++)

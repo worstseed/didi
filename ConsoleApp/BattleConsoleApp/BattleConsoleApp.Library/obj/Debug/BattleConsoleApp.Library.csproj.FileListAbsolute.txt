@@ -13,3 +13,8 @@ C:\Users\PP\Desktop\Didi-master\Didi-master\ConsoleApp\BattleConsoleApp\BattleCo
 C:\Users\PP\Desktop\Didi-master\Didi-master\ConsoleApp\BattleConsoleApp\BattleConsoleApp.Library\obj\Debug\BattleConsoleApp.Library.csprojResolveAssemblyReference.cache
 C:\Users\PP\Desktop\Didi-master\Didi-master\ConsoleApp\BattleConsoleApp\BattleConsoleApp.Library\obj\Debug\BattleConsoleApp.Library.dll
 C:\Users\PP\Desktop\Didi-master\Didi-master\ConsoleApp\BattleConsoleApp\BattleConsoleApp.Library\obj\Debug\BattleConsoleApp.Library.pdb
+C:\Users\Marek\Desktop\SSiSPD\Didi3\Didi\ConsoleApp\BattleConsoleApp\BattleConsoleApp.Library\bin\Debug\BattleConsoleApp.Library.dll
+C:\Users\Marek\Desktop\SSiSPD\Didi3\Didi\ConsoleApp\BattleConsoleApp\BattleConsoleApp.Library\bin\Debug\BattleConsoleApp.Library.pdb
+C:\Users\Marek\Desktop\SSiSPD\Didi3\Didi\ConsoleApp\BattleConsoleApp\BattleConsoleApp.Library\obj\Debug\BattleConsoleApp.Library.csprojResolveAssemblyReference.cache
+C:\Users\Marek\Desktop\SSiSPD\Didi3\Didi\ConsoleApp\BattleConsoleApp\BattleConsoleApp.Library\obj\Debug\BattleConsoleApp.Library.dll
+C:\Users\Marek\Desktop\SSiSPD\Didi3\Didi\ConsoleApp\BattleConsoleApp\BattleConsoleApp.Library\obj\Debug\BattleConsoleApp.Library.pdb

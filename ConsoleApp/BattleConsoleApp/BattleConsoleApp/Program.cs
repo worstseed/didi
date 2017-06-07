@@ -16,7 +16,7 @@ namespace BattleConsoleApp
             for (var i = 1; i <= numberOfRounds; i++)
             {
                 Display.WriteToConsole(battle.BattleArea);
-                battle.PlayRound();
+                battle.NextTurn();
                 Console.WriteLine();
             }
             Console.ReadLine();

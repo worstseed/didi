@@ -3,18 +3,42 @@
     public class Battle
     {
         public BattleArea BattleArea { get; set; }
+
+        // Konstruktor klasy - stworzenie pola bitwy o zadanym rozmiarze.
         public Battle()
         {
             BattleArea = new BattleArea(10, 20);
         }
 
-        public void PlayRound()
+        // Metoda przeprowadza pole bitwy do następnego stanu:
+        //   1) Wywołanie funkcji przejścia dla całego automatu 
+        //       - w pierwszym kroku jednostki ze sobą walczą
+        //   2) Aktualiazcja pozycji
+        //       - w drugim jednostki wykonują ruch.
+        public void NextTurn()
         {
-            Rule();
+            TransitionRule();
             UpdatePositions();
             BattleArea.UpdateArea();
         }
 
+        // Funkcja przejścia - wykonanie dla każdej komórki reguły lokalnej.
+        private void TransitionRule()
+        {
+            for (var i = 0; i < BattleArea.Length; i++)
+            {
+                for (var j = 0; j < BattleArea.Width; j++)
+                {
+                    LocalRule(i, j);
+                }
+            }
+        }
+
+        // Reguła lokalna:
+        //  1) Sprawdzenie czy rozpatrywana komórka jest jednostką armii
+        //  2) Jeżeli tak - sprawdzenie, do której armii należy
+        //  3) Zliczenie jednostek swojej armii oraz przeciwnej w sąsiedztwie
+        //  4) Symulacja walki.
         private void LocalRule(int row, int col)
         {
             BattleField warrior = BattleArea.ActualBattleArea[row, col];
@@ -30,6 +54,9 @@
             LocalFight(numberOfWarrior, numberOfOppositeWarrior, row, col, warrior, oppositeWarrior);
         }
 
+        // Metody oraz wersje odpowiedzialne za zliczenie jednostek w sąsiedztwie:
+        //  _v1 - sąsiedztwo Moore'a
+        //  _v2 - sąsiedztwo Moore'a "bez pleców"
         private void CountWarriors(out int numberOfWarrior, out int numberOfOppositeWarrior,
             int row, int col, BattleField warrior, BattleField oppositeWarrior, int version = 2)
         {
@@ -46,7 +73,6 @@
             }
 
         }
-
         private void CountWarriors_v1(ref int numberOfWarrior, ref int numberOfOppositeWarrior, int row, int col,
             BattleField warrior, BattleField oppositeWarrior)
         {
@@ -68,7 +94,6 @@
                 }
             }
         }
-
         private void CountWarriors_v2(ref int numberOfWarrior, ref int numberOfOppositeWarrior, int row, int col,
             BattleField warrior, BattleField oppositeWarrior)
         {
@@ -101,6 +126,8 @@
             }
         }
 
+        // Metoda, która na podstawie liczby jednostek swojej oraz przeciwnej armii w sąsiedztwie
+        //  określa stan rozpatrywnej komórki w nastęnej turze
         private void LocalFight(int numberOfWarrior, int numberOfOppositeWarrior, int row, int col,
             BattleField warrior, BattleField oppositeWarrior)
         {
@@ -116,6 +143,33 @@
             }
         }
 
+        // Metoda ta symuluje ruch wojsk. Bierzemy pod uwagę położenie jednostek i nie przechodzimy
+        //  w prosty (od góry do dołu, od lewej do prawej) sposób po całym polu bitwy, żeby nie faworyzować 
+        //   żadnej armii.
+        private void UpdatePositions()
+        {
+            for (var i = BattleArea.Length / 2 - 1; i > -1; i--)
+            {
+                for (var j = 0; j < BattleArea.Width; j++)
+                {
+                    if (BattleArea.NextBattleArea[i, j] == BattleField.Empty)
+                        Walk(i, j);
+                }
+            }
+            for (var i = BattleArea.Length / 2; i < BattleArea.Length; i++)
+            {
+                for (var j = 0; j < BattleArea.Width; j++)
+                {
+                    if (BattleArea.NextBattleArea[i, j] == BattleField.Empty)
+                        Walk(i, j);
+                }
+            }
+        }
+
+        // Metoda decydująca o przemieszczeniu się pojedynczej jednostki:
+        //  _v1 - poruszanie się po sektorach wyznaczonych przez przekątne prostokąta
+        //  _v2 - poruszanie się w stronę przeciwnika, aż do osiągnięcia pasma środkowego
+        //         pola bitwy, gdzie jednostki poruszają się do środka geometrycznego pola bitwy
         private void Walk(int row, int col, int version = 2)
         {
             BattleField warrior = BattleArea.ActualBattleArea[row, col];
@@ -129,7 +183,50 @@
                     break;
             }
         }
+        private void Move_v1(int row, int col, BattleField warrior)
+        {
+            if ((BattleArea.Ratio * row >= col) && (BattleArea.Width - BattleArea.Ratio * row >= col))
+            {
+                if (BattleArea.NextBattleArea[row, col + 1] == BattleField.Walkable)
+                {
+                    BattleArea.NextBattleArea[row, col + 1] = warrior;
+                    BattleArea.NextBattleArea[row, col] = BattleField.Walkable;
+                }
 
+                else
+                    BattleArea.NextBattleArea[row, col] = warrior;
+            }
+            else if ((BattleArea.Ratio * row < col) && (BattleArea.Width - BattleArea.Ratio * row > col))
+            {
+                if (BattleArea.NextBattleArea[row + 1, col] == BattleField.Walkable)
+                {
+                    BattleArea.NextBattleArea[row + 1, col] = warrior;
+                    BattleArea.NextBattleArea[row, col] = BattleField.Walkable;
+                }
+                else
+                    BattleArea.NextBattleArea[row, col] = warrior;
+            }
+            else if ((BattleArea.Ratio * row <= col) && (BattleArea.Width - BattleArea.Ratio * row <= col))
+            {
+                if (BattleArea.NextBattleArea[row, col - 1] == BattleField.Walkable)
+                {
+                    BattleArea.NextBattleArea[row, col - 1] = warrior;
+                    BattleArea.NextBattleArea[row, col] = BattleField.Walkable;
+                }
+                else
+                    BattleArea.NextBattleArea[row, col] = warrior;
+            }
+            else if ((BattleArea.Ratio * row > col) && (BattleArea.Width - BattleArea.Ratio * row < col))
+            {
+                if (BattleArea.NextBattleArea[row - 1, col] == BattleField.Walkable)
+                {
+                    BattleArea.NextBattleArea[row - 1, col] = warrior;
+                    BattleArea.NextBattleArea[row, col] = BattleField.Walkable;
+                }
+                else
+                    BattleArea.NextBattleArea[row, col] = warrior;
+            }
+        }
         private void Move_v2(int row, int col, BattleField warrior)
         {
             if (row < BattleArea.Length / 2 - 1)
@@ -190,6 +287,7 @@
             }
         }
 
+        // Metoda decydująca o przemieszczeniu w przypadku natrafienia na przeszkodę
         private void MoveAroundObstacle(int row, int col, BattleField warrior)
         {
             if (col - 1 > -1 && BattleArea.NextBattleArea[row, col - 1] == BattleField.Walkable)
@@ -208,82 +306,5 @@
                 BattleArea.NextBattleArea[row, col] = warrior;
             }
         }
-
-        private void Move_v1(int row, int col, BattleField warrior)
-        {
-            if ((BattleArea.Ratio * row >= col) && (BattleArea.Width - BattleArea.Ratio * row >= col))
-            {
-                if (BattleArea.NextBattleArea[row, col + 1] == BattleField.Walkable)
-                {
-                    BattleArea.NextBattleArea[row, col + 1] = warrior;
-                    BattleArea.NextBattleArea[row, col] = BattleField.Walkable;
-                }
-
-                else
-                    BattleArea.NextBattleArea[row, col] = warrior;
-            }
-            else if ((BattleArea.Ratio * row < col) && (BattleArea.Width - BattleArea.Ratio * row > col))
-            {
-                if (BattleArea.NextBattleArea[row + 1, col] == BattleField.Walkable)
-                {
-                    BattleArea.NextBattleArea[row + 1, col] = warrior;
-                    BattleArea.NextBattleArea[row, col] = BattleField.Walkable;
-                }
-                else
-                    BattleArea.NextBattleArea[row, col] = warrior;
-            }
-            else if ((BattleArea.Ratio * row <= col) && (BattleArea.Width - BattleArea.Ratio * row <= col))
-            {
-                if (BattleArea.NextBattleArea[row, col - 1] == BattleField.Walkable)
-                {
-                    BattleArea.NextBattleArea[row, col - 1] = warrior;
-                    BattleArea.NextBattleArea[row, col] = BattleField.Walkable;
-                }
-                else
-                    BattleArea.NextBattleArea[row, col] = warrior;
-            }
-            else if ((BattleArea.Ratio * row > col) && (BattleArea.Width - BattleArea.Ratio * row < col))
-            {
-                if (BattleArea.NextBattleArea[row - 1, col] == BattleField.Walkable)
-                {
-                    BattleArea.NextBattleArea[row - 1, col] = warrior;
-                    BattleArea.NextBattleArea[row, col] = BattleField.Walkable;
-                }
-                else
-                    BattleArea.NextBattleArea[row, col] = warrior;
-            }
-        }
-
-        private void Rule()
-        {
-            for (var i = 0; i < BattleArea.Length; i++)
-            {
-                for (var j = 0; j < BattleArea.Width; j++)
-                {
-                    LocalRule(i, j);
-                }
-            }
-        }
-
-        private void UpdatePositions()
-        {
-            for (var i = BattleArea.Length / 2 - 1; i > -1; i--)
-            {
-                for (var j = 0; j < BattleArea.Width; j++)
-                {
-                    if (BattleArea.NextBattleArea[i, j] == BattleField.Empty)
-                        Walk(i, j);
-                }
-            }
-            for (var i = BattleArea.Length / 2; i < BattleArea.Length; i++)
-            {
-                for (var j = 0; j < BattleArea.Width; j++)
-                {
-                    if (BattleArea.NextBattleArea[i, j] == BattleField.Empty)
-                        Walk(i, j);
-                }
-            }
-        }
-        
     }
 }
