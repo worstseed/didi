@@ -296,15 +296,19 @@ namespace War
 
         private void Button_Next(object sender, RoutedEventArgs e)
         {
-            Display(battle.BattleArea.ActualBattleArea);
             if (actualArea >= prevAreas.Count())
             {
-                BattleField[,] temp= new BattleField[10,20];
-                temp = battle.BattleArea.ActualBattleArea;
-                prevAreas.Add(temp);
+                Display(battle.BattleArea.ActualBattleArea);
+                prevAreas.Add(battle.BattleArea.TakeCopyOfArea());
+                battle.NextTurn();
+                actualArea++;
             }
-            actualArea++;
-            battle.NextTurn();
+            else
+            {
+                actualArea++;
+                Display(prevAreas[actualArea - 1]);
+            }
+
         }
 
         private void Button_Previous(object sender, RoutedEventArgs e)
@@ -314,6 +318,26 @@ namespace War
                 actualArea--;
                 Display(prevAreas[actualArea-1]);
             }
+        }
+
+        private void FieldClicked(object sender, MouseButtonEventArgs e)
+        {
+            Label clickedLabel = sender as Label;
+            int row = Grid.GetRow(clickedLabel);
+            int col = Grid.GetColumn(clickedLabel);
+            if (battle.BattleArea.ActualBattleArea[row, col] != BattleField.NotWalkable)
+            {
+                prevAreas[actualArea-1][row, col] = BattleField.NotWalkable;
+                battle.BattleArea.ActualBattleArea[row, col] = BattleField.NotWalkable;
+                battle.BattleArea.NextBattleArea[row, col] = BattleField.NotWalkable;
+            }
+            else
+            {
+                prevAreas[actualArea-1][row, col] = BattleField.Walkable;
+                battle.BattleArea.ActualBattleArea[row, col] = BattleField.Walkable;
+                battle.BattleArea.NextBattleArea[row, col] = BattleField.Walkable;
+            }
+            Display(prevAreas[actualArea-1]);
         }
     }
     

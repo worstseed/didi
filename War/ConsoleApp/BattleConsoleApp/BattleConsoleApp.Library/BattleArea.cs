@@ -65,6 +65,21 @@
                     //ActualBattleArea[6, 11] = BattleField.NotWalkable;
                     ActualBattleArea[6, 15] = BattleField.NotWalkable;
                     break;
+                case 3:
+                    ActualBattleArea[3, 4] = BattleField.NotWalkable;
+                    ActualBattleArea[4, 10] = BattleField.NotWalkable;
+                    ActualBattleArea[4, 13] = BattleField.NotWalkable;
+
+                    ActualBattleArea[5, 1] = BattleField.NotWalkable;
+                    ActualBattleArea[5, 2] = BattleField.NotWalkable;
+                    //ActualBattleArea[5, 9] = BattleField.NotWalkable;
+                    //ActualBattleArea[5, 10] = BattleField.NotWalkable;
+                    ActualBattleArea[5, 13] = BattleField.NotWalkable;
+                    ActualBattleArea[5, 17] = BattleField.NotWalkable;
+                    ActualBattleArea[6, 5] = BattleField.NotWalkable;
+                    ActualBattleArea[6, 11] = BattleField.NotWalkable;
+                    ActualBattleArea[6, 15] = BattleField.NotWalkable;
+                    break;
             }
         }
         
@@ -120,6 +135,20 @@
                     area[i, j] = BattleField.Empty;
                 }
             }
+        }
+
+        public BattleField[,] TakeCopyOfArea()
+        {
+            BattleField[,] copiedArea= new BattleField[10, 20];
+
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 20; j++)
+                {
+                    copiedArea[i, j] = ActualBattleArea[i, j];
+                }
+            }
+            return copiedArea;
         }
     }
 }

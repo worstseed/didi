@@ -14,3 +14,19 @@ c:\users\pp\documents\visual studio 2017\Projects\War\War\obj\Debug\War.Properti
 c:\users\pp\documents\visual studio 2017\Projects\War\War\obj\Debug\War.csproj.GenerateResource.Cache
 c:\users\pp\documents\visual studio 2017\Projects\War\War\obj\Debug\War.exe
 c:\users\pp\documents\visual studio 2017\Projects\War\War\obj\Debug\War.pdb
+C:\Users\PP\Documents\Didi\War\War\bin\Debug\War.exe.config
+C:\Users\PP\Documents\Didi\War\War\bin\Debug\War.exe
+C:\Users\PP\Documents\Didi\War\War\bin\Debug\War.pdb
+C:\Users\PP\Documents\Didi\War\War\bin\Debug\BattleConsoleApp.Library.dll
+C:\Users\PP\Documents\Didi\War\War\bin\Debug\BattleConsoleApp.Library.pdb
+C:\Users\PP\Documents\Didi\War\War\obj\Debug\War.csprojResolveAssemblyReference.cache
+C:\Users\PP\Documents\Didi\War\War\obj\Debug\MainWindow.g.cs
+C:\Users\PP\Documents\Didi\War\War\obj\Debug\App.g.cs
+C:\Users\PP\Documents\Didi\War\War\obj\Debug\War_MarkupCompile.cache
+C:\Users\PP\Documents\Didi\War\War\obj\Debug\War_MarkupCompile.lref
+C:\Users\PP\Documents\Didi\War\War\obj\Debug\MainWindow.baml
+C:\Users\PP\Documents\Didi\War\War\obj\Debug\War.g.resources
+C:\Users\PP\Documents\Didi\War\War\obj\Debug\War.Properties.Resources.resources
+C:\Users\PP\Documents\Didi\War\War\obj\Debug\War.csproj.GenerateResource.Cache
+C:\Users\PP\Documents\Didi\War\War\obj\Debug\War.exe
+C:\Users\PP\Documents\Didi\War\War\obj\Debug\War.pdb
